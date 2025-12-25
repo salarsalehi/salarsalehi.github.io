@@ -19,7 +19,7 @@ html, body {
   overflow: hidden;
 }
 
-/* GRADIENT OVERLAY (خیلی مهم) */
+/* GRADIENT OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
@@ -48,7 +48,7 @@ html, body {
 /* PROFILE */
 .profile img {
   width: 100%;
-  max-width: 380px;
+  max-width: 420px; /* قبلا 380px بود */
   height: auto;
   border-radius: 14px;
   filter: grayscale(100%);
@@ -58,20 +58,20 @@ html, body {
 /* CONTENT */
 .content {
   max-width: 720px;
+  margin-top: 40px; /* اضافه شد برای پایین‌تر آوردن متن */
 }
 
 .content h1 {
-  font-size: 42px;
+  font-size: 48px; /* قبلا 42px بود */
   letter-spacing: 1.5px;
   margin-bottom: 32px;
 }
 
 .content p {
-  font-size: 18px;
-  line-height: 1.85;
+  font-size: 20px; /* قبلا 18px بود */
+  line-height: 1.9;
   margin-bottom: 18px;
   opacity: 0.95;
-
   
   text-align: justify;
   text-justify: inter-word;
@@ -87,7 +87,11 @@ html, body {
   }
 
   .content h1 {
-    font-size: 34px;
+    font-size: 38px; /* قبلا 34px بود */
+  }
+
+  .profile img {
+    max-width: 360px; /* کمی بزرگ‌تر از قبل */
   }
 }
 
@@ -100,10 +104,18 @@ html, body {
   }
 
   .profile {
-    margin-bottom: 40px;
+    margin-bottom: 50px; /* کمی بیشتر فاصله با متن */
   }
 
   .overlay {
     background: rgba(0,0,0,0.75);
+  }
+
+  .content h1 {
+    font-size: 36px; /* کمی بزرگ‌تر */
+  }
+
+  .content p {
+    font-size: 19px; /* کمی بزرگ‌تر */
   }
 }
