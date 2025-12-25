@@ -47,7 +47,7 @@ html, body {
 
 /* PROFILE */
 .profile img {
-  width: 165%;
+  width: 155%;
   max-width: 670px; /* قبلا 380px بود */
   height: auto;
   border-radius: 14px;
@@ -59,20 +59,19 @@ html, body {
 /* CONTENT */
 .content {
   max-width: 720px;
-  margin-top: 100px; /* اضافه شد برای پایین‌تر آوردن متن */
-  margin-left: 100px; /* فاصله از سمت چپ اضافه شد */
+  margin-bottom: 10px; /* اضافه شد برای پایین‌تر آوردن متن */
+  margin-left: 200px; /* فاصله از سمت چپ اضافه شد */
 }
 
 .content h1 {
   font-size: 48px; /* قبلا 42px بود */
   letter-spacing: 1.5px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .content p {
   font-size: 30px; /* قبلا 18px بود */
   line-height: 1.9;
-  margin-bottom: 10px;
   opacity: 0.95;
   
   text-align: justify;
