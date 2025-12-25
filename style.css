@@ -43,7 +43,7 @@ html, body {
 /* RIGHT SIDE */
 .right {
   position: relative;
-  width: 65%;
+  width: 100%;
   background: url("WallpaperDog-20366392.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
