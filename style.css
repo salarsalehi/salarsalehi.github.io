@@ -59,7 +59,7 @@ html, body {
 /* CONTENT */
 .content {
   max-width: 720px;
-  margin-top: 40px; /* اضافه شد برای پایین‌تر آوردن متن */
+  margin-top: 100px; /* اضافه شد برای پایین‌تر آوردن متن */
   margin-left: 100px; /* فاصله از سمت چپ اضافه شد */
 }
 
