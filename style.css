@@ -59,8 +59,8 @@ html, body {
 /* CONTENT */
 .content {
   max-width: 720px;
-  margin-bottom: 10px; /* اضافه شد برای پایین‌تر آوردن متن */
-  margin-left: 350px; /* فاصله از سمت چپ اضافه شد */
+  margin-top: 800px; /* اضافه شد برای پایین‌تر آوردن متن */
+  margin-left: 200px; /* فاصله از سمت چپ اضافه شد */
 }
 
 .content h1 {
