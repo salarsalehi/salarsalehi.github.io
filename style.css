@@ -53,6 +53,7 @@ html, body {
   border-radius: 14px;
   filter: grayscale(100%);
   box-shadow: 0 0 60px rgba(255,255,255,0.08);
+  margin-bottom: 10px;
 }
 
 /* CONTENT */
@@ -70,7 +71,7 @@ html, body {
 .content p {
   font-size: 20px; /* قبلا 18px بود */
   line-height: 1.9;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   opacity: 0.95;
   
   text-align: justify;
