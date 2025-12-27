@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>سالار صالحی | Salar Salehi</title>
+  <title>صفحه اصلی - سالار صالحی</title>
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
 
     * {
       margin: 0;
@@ -16,128 +16,155 @@
 
     body {
       font-family: 'Vazirmatn', system-ui, sans-serif;
-      background-color: #0f0f11;
-      color: #e0e0e5;
-      line-height: 1.7;
+      background: #0a0a0c;
+      color: #e5e5e5;
+      line-height: 1.8;
       min-height: 100vh;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 4rem 2rem;
+      padding: 6rem 2rem 4rem;
     }
 
-    .content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      min-height: 80vh;
+    header {
+      text-align: center;
+      margin-bottom: 6rem;
     }
 
-    .text-section {
-      padding-right: 2rem;
-    }
-
-    .text-section h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(90deg, #a78bfa, #7dd3fc);
+    header h1 {
+      font-size: 4.2rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #c084fc, #60a5fa, #34d399);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .text-section p {
-      font-size: 1.3rem;
-      color: #a0a0b0;
-      margin-bottom: 2rem;
-      max-width: 90%;
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
     }
 
-    .image-section {
+    .text-section {
+      padding-right: 3rem;
+    }
+
+    .text-section h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+      color: #f1f1f5;
+    }
+
+    .text-section p {
+      font-size: 1.35rem;
+      color: #b0b0c0;
+      margin-bottom: 2.5rem;
+      max-width: 85%;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(90deg, #7c3aed, #3b82f6);
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(124, 58, 237, 0.45);
+      background: linear-gradient(90deg, #8b5cf6, #60a5fa);
+    }
+
+    .image-wrapper {
       position: relative;
       border-radius: 1.5rem;
       overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6),
-                  0 0 0 1px rgba(100,100,255,0.1);
+      box-shadow: 
+        0 40px 80px -20px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(100,100,255,0.08);
     }
 
-    .image-section img {
+    .image-wrapper img {
       width: 100%;
       height: auto;
       display: block;
-      transition: transform 0.5s ease;
+      filter: grayscale(100%);
+      transition: filter 0.6s ease, transform 0.8s ease;
     }
 
-    .image-section:hover img {
-      transform: scale(1.08);
-    }
-
-    /* افکت شیشه‌ای ملایم */
-    .image-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(100,100,255,0.08), rgba(59,130,246,0.05));
-      backdrop-filter: blur(4px);
-      border-radius: 1.5rem;
-      z-index: 1;
-      pointer-events: none;
+    .image-wrapper:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.06);
     }
 
     @media (max-width: 1024px) {
       .content {
         grid-template-columns: 1fr;
-        gap: 4rem;
+        gap: 5rem;
       }
-      
       .text-section {
         padding-right: 0;
         text-align: center;
       }
-      
-      .text-section h1 {
-        font-size: 3rem;
+      .text-section h2 {
+        font-size: 2.5rem;
       }
-      
       .text-section p {
         max-width: 100%;
+      }
+      header h1 {
+        font-size: 3.5rem;
       }
     }
 
     @media (max-width: 640px) {
       .container {
-        padding: 3rem 1.5rem;
+        padding: 4rem 1.5rem 3rem;
       }
-      
-      .text-section h1 {
-        font-size: 2.5rem;
+      header h1 {
+        font-size: 2.8rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <header>
+      <h1>[نام شما]</h1>
+    </header>
+
     <div class="content">
       <!-- بخش متن -->
       <div class="text-section">
-        <h1>عنوان جذاب شما</h1>
+        <h2>خوش آمدید</h2>
         <p>
-          اینجا می‌توانید هر متنی که دوست دارید قرار دهید. این قالب با تم تیره و مدرن طراحی شده 
-          و کاملاً ریسپانسیو است. متن، تصویر و رنگ‌ها را به راحتی تغییر دهید.
+          اینجا می‌توانید معرفی کوتاه و جذابی از خودتون بنویسید. این فضا با طراحی مدرن و تیره 
+          ساخته شده تا تمرکز روی محتوای شما باشه.
         </p>
         <p>
-          ویژگی‌ها: گرادیانت زیبا، افکت هاور نرم، فونت فارسی شیک، طراحی مینیمال.
+          از گرادیانت‌های نرم، سایه‌های عمیق و افکت‌های هاور ملایم استفاده شده تا حس حرفه‌ای بودن منتقل بشه.
         </p>
+
+        <a href="about.html" class="cta-button">درباره من</a>
       </div>
 
       <!-- بخش تصویر -->
-      <div class="image-section">
+      <div class="image-wrapper">
         <img src="profile.png" 
-             alt="سالار صالحی">
+             alt="تصویر پروفایل">
       </div>
     </div>
   </div>
