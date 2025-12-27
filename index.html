@@ -18,75 +18,25 @@
       height: 100%;
       overflow: hidden;
       font-family: 'Vazirmatn', system-ui, sans-serif;
-      color: #f0f0f5;
+      color: #e5e5e5;
     }
 
     body {
+      /* فقط این خط رو عوض کن — اسم فایل عکس خودت رو بنویس */
       background: url('background.webp') no-repeat center center fixed;
       background-size: cover;
     }
 
-    /* نوار بالا */
-    .top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: rgba(10, 10, 15, 0.7);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      border-bottom: 1px solid rgba(100, 100, 255, 0.2);
-    }
-
-    .top-bar h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, #c084fc, #60a5fa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* نوار سمت راست (دسکتاپ) */
-    .sidebar {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      z-index: 10;
-    }
-
-    .sidebar a {
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(100, 100, 255, 0.2);
-    }
-
-    .sidebar a:hover {
-      background: rgba(124, 58, 237, 0.4);
-      transform: scale(1.15);
-    }
-
-    .sidebar img {
-      width: 28px;
-      height: 28px;
-      filter: brightness(0) invert(1); /* سفید کردن آیکون‌ها */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* کمی تیره‌تر کردم که متن بهتر خونده بشه */
+      backdrop-filter: blur(4px); /* بلور ملایم برای حس حرفه‌ای */
+      z-index: 1;
     }
 
     .container {
+      position: relative;
       height: 100%;
       width: 100%;
       display: flex;
@@ -94,74 +44,18 @@
       justify-content: center;
       align-items: center;
       padding: 2rem;
-      padding-top: 80px; /* فضای نوار بالا */
+      z-index: 2;
     }
 
-    /* موبایل: مخفی کردن sidebar و اضافه کردن آیکون‌ها زیر دکمه */
-    @media (max-width: 1024px) {
-      .sidebar { display: none; }
-
-      .social-mobile {
-        margin-top: 2rem;
-        display: flex;
-        gap: 20px;
-      }
-
-      .social-mobile a {
-        width: 50px;
-        height: 50px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-      }
-
-      .social-mobile a:hover {
-        background: rgba(124, 58, 237, 0.4);
-        transform: scale(1.15);
-      }
-    }
-
-    /* بقیه استایل‌های قبلی (content، text-section، cta-button، image-wrapper و ...) */
+    /* بقیه استایل‌ها همون قبلی بمونن ... */
   </style>
 </head>
 <body>
-  <!-- نوار بالا -->
-  <div class="top-bar">
-    <h1>[نام شما] - اقتصاد شهری و اجتماعی</h1>
-  </div>
-
-  <!-- نوار سمت راست -->
-  <div class="sidebar">
-    <a href="https://instagram.com/yourusername" target="_blank">
-      <img src="https://static.vecteezy.com/system/resources/thumbnails/028/286/472/small/set-of-instagram-social-media-logo-icons-instagram-icon-simple-illustration-free-vector.jpg" alt="اینستاگرام">
-    </a>
-    <a href="https://t.me/yourusername" target="_blank">
-      <img src="https://static.vecteezy.com/system/resources/previews/018/757/784/non_2x/telegram-logo-telegram-icon-free-free-vector.jpg" alt="تلگرام">
-    </a>
-  </div>
+  <div class="overlay"></div>
 
   <div class="container">
     <div class="content">
-      <!-- محتوای اصلی قبلی (text-section و image-wrapper در دسکتاپ) -->
-
-      <!-- در موبایل: بعد از دکمه درباره من اضافه کن -->
-      <div class="profile-wrapper">
-        <!-- ... محتوای موبایل قبلی ... -->
-        <a href="about.html" class="cta-button">درباره من</a>
-
-        <!-- آیکون‌های اجتماعی در موبایل -->
-        <div class="social-mobile">
-          <a href="https://instagram.com/yourusername" target="_blank">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/028/286/472/small/set-of-instagram-social-media-logo-icons-instagram-icon-simple-illustration-free-vector.jpg" alt="اینستاگرام">
-          </a>
-          <a href="https://t.me/yourusername" target="_blank">
-            <img src="https://static.vecteezy.com/system/resources/previews/018/757/784/non_2x/telegram-logo-telegram-icon-free-free-vector.jpg" alt="تلگرام">
-          </a>
-        </div>
-      </div>
+      <!-- تمام محتوای قبلی (متن، دکمه، عکس پروفایل و ...) -->
     </div>
   </div>
 </body>
