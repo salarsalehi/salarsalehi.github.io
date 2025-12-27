@@ -6,20 +6,24 @@
   <title>سالار صالحی | Salar Salehi</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #000;
+      background: #000;
       color: #fff;
       font-family: sans-serif;
     }
 
-    .container {
-      height: 100%;
+    /* دسکتاپ */
+    .page {
+      height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
 
     .frame {
@@ -39,11 +43,12 @@
     .image-box {
       display: flex;
       justify-content: center;
+      align-items: center;
     }
 
     .image-box img {
-      max-height: 100%;
       max-width: 100%;
+      max-height: 100%;
       border-radius: 16px;
       filter: grayscale(100%);
     }
@@ -58,28 +63,41 @@
       color: #ccc;
     }
 
+    /* موبایل */
     @media (max-width: 768px) {
+      .page {
+        height: auto;
+        overflow: visible;
+        padding: 20px;
+      }
+
       .frame {
         flex-direction: column;
-        height: 100%;
-        text-align: center;
+        height: auto;
+        gap: 24px;
+      }
+
+      .image-box img {
+        max-height: none;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <div class="page">
     <div class="frame">
 
       <div class="image-box">
-        <img src="profile.png" alt="سالار صالحی">
+        <img src="profile.png" alt="تصویر">
       </div>
 
       <div class="text-box">
-        <h1>من سالار صالحی</h1>
+        <h1>عنوان اینجاست</h1>
         <p>
-         یک شهروند ایرانی علاقمند به توسعه ایران هستم که اقتصاد، سرمایه‌گذاری و توسعه‌ی کسب‌وکار تخصص حرفه‌ای من است، اما سال‌هاست که علاقمند جدی هنر، سیاست و موضوعات اجتماعی نیز هستم. اینجا فضایی است برای جمع‌آوری دیدگاه‌ها و نظراتم و محیطی است برای دعوت به عقلانیت.
+          این متن هرچقدر هم طولانی باشه،  
+          روی موبایل کامل دیده می‌شه  
+          و روی دسکتاپ صفحه تکون نمی‌خوره.
         </p>
       </div>
 
