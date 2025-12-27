@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صفحه درست</title>
+  <title>صفحه ثابت</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      background: #000;
+      background-color: #000;
       color: #fff;
       font-family: sans-serif;
     }
 
+    /* دسکتاپ */
     .page {
       height: 100vh;
       display: flex;
@@ -32,14 +35,34 @@
       align-items: center;
     }
 
-    .image-box,
-    .text-box {
+    .text-box,
+    .image-box {
       flex: 1;
+      height: 100%;
     }
 
+    /* متن */
+    .text-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .text-box h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    .text-box p {
+      line-height: 1.8;
+      color: #ccc;
+      max-width: 500px;
+    }
+
+    /* عکس */
     .image-box {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end; /* عکس سمت راست */
       align-items: center;
     }
 
@@ -53,16 +76,7 @@
       filter: grayscale(100%);
     }
 
-    .text-box h1 {
-      margin-top: 0;
-      font-size: 32px;
-    }
-
-    .text-box p {
-      line-height: 1.8;
-      color: #ccc;
-    }
-
+    /* موبایل */
     @media (max-width: 768px) {
       .page {
         height: auto;
@@ -73,6 +87,16 @@
       .frame {
         flex-direction: column;
         height: auto;
+        gap: 24px;
+      }
+
+      .image-box {
+        justify-content: center;
+      }
+
+      .text-box {
+        text-align: center;
+        align-items: center;
       }
     }
   </style>
@@ -82,15 +106,19 @@
   <div class="page">
     <div class="frame">
 
-      <div class="image-box">
-        <img src="image.jpg" alt="تصویر">
-      </div>
-
+      <!-- متن -->
       <div class="text-box">
         <h1>عنوان اینجاست</h1>
         <p>
-          تصویر هیچ‌وقت نصفه نمی‌شود و همیشه داخل قاب اسکیل می‌شود.
+          اینجا متن دلخواهت رو می‌نویسی.
+          روی دسکتاپ صفحه تکون نمی‌خوره،
+          روی موبایل هم چیزی نصفه نمی‌شه.
         </p>
+      </div>
+
+      <!-- عکس -->
+      <div class="image-box">
+        <img src="image.jpg" alt="تصویر">
       </div>
 
     </div>
