@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>صفحه اصلی - سالار صالحی</title>
+  <title>سالار صالحی - صفحه اصلی</title>
   
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
@@ -43,10 +43,6 @@
         padding: 0 4rem;
       }
 
-      header h1 {
-        display: none; /* حذف عنوان بالای صفحه */
-      }
-
       .text-section {
         display: flex;
         flex-direction: column;
@@ -64,6 +60,25 @@
         color: #b0b0c0;
         max-width: 90%;
         margin-bottom: 2.5rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: white;
+        background: linear-gradient(90deg, #7c3aed, #3b82f6);
+        border: none;
+        border-radius: 999px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(124, 58, 237, 0.45);
       }
 
       .image-wrapper {
@@ -179,11 +194,11 @@
 
       <div class="image-wrapper">
         <img src="profile.png" 
-             alt="تصویر پروفایل">
+             alt="سالار صالحی">
       </div>
 
       <!-- موبایل: چیدمان عمودی با عکس دایره‌ای -->
-      <div class="profile-wrapper" style="display: none;">
+      <div class="profile-wrapper">
         <img src="profile.png" 
              class="profile-image" alt="سالار صالحی">
         
@@ -203,7 +218,7 @@
     </div>
   </div>
 
-  <!-- فقط در موبایل نمایش داده می‌شود -->
+  <!-- نمایش شرطی درست -->
   <style>
     @media (max-width: 1024px) {
       .content > .text-section,
@@ -215,6 +230,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .profile-wrapper {
+        display: none;
       }
     }
   </style>
