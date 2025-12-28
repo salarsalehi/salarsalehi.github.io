@@ -22,26 +22,24 @@
       color: #e5e5e5;
     }
 
-    /* لایه بک‌گراند تار (پشت همه چیز) */
     .blurred-bg {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      filter: blur(6px);            /* ← میزان بلور — 10 تا 18 عالیه */
-      transform: scale(1.1);         /* کمی بزرگ‌تر برای جلوگیری از لبه‌های سفید */
+      filter: blur(6px);
+      transform: scale(1.1);
       z-index: -2;
     }
 
-    /* لایه تیرگی روی بلور (برای خوانایی بهتر متن) */
+
     .dark-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.2); /* ← تیرگی — 0.4 تا 0.6 تنظیم کن */
+      background: rgba(0, 0, 0, 0.2);
       z-index: -1;
     }
 
-    /* محتوای اصلی — کاملاً واضح */
     .container {
       position: relative;
       z-index: 1;
@@ -54,7 +52,6 @@
       padding: 2rem;
     }
 
-    /* دسکتاپ و تبلت بزرگ */
     @media (min-width: 1025px) {
       .content {
         display: grid;
@@ -123,7 +120,6 @@
       }
     }
 
-    /* موبایل و تبلت کوچک */
     @media (max-width: 1024px) {
 
         html, body {
@@ -193,15 +189,10 @@
   </style>
 </head>
 <body>
-  <!-- لایه بک‌گراند تار -->
   <div class="blurred-bg"></div>
-  
-  <!-- لایه تیرگی روی بلور -->
   <div class="dark-overlay"></div>
-
   <div class="container">
     <div class="content">
-      <!-- دسکتاپ -->
       <div class="text-section">
         <h2>من سالار صالحی</h2>
         <p>
@@ -215,7 +206,6 @@
         <img src="profile.png" alt="سالار صالحی">
       </div>
 
-      <!-- موبایل -->
       <div class="profile-wrapper">
         <img src="profile.png" class="profile-image" alt="سالار صالحی">
         <div class="text-section">
@@ -231,7 +221,6 @@
     </div>
   </div>
 
-  <!-- نمایش شرطی -->
   <style>
     @media (max-width: 1024px) {
       .content > .text-section,
