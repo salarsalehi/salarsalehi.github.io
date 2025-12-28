@@ -69,23 +69,24 @@
 
       .cta-button {
         display: inline-block;
-        padding: 0.8rem 1.8rem;           /* اندازه ثابت و کوتاه */
+        padding: 0.8rem 1.8rem;
         font-size: 1.1rem;
         font-weight: 600;
         color: white;
-        background: linear-gradient(90deg, #7c3aed, #3b82f6);
+        background: linear-gradient(90deg, #111111, #333333, #444444); /* گرادیانت مشکی-خاکستری */
         border: none;
         border-radius: 999px;
         text-decoration: none;
         transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
-        width: fit-content;               /* ← مهم: عرض فقط به اندازه محتوای خودش */
-        align-self: flex-start;           /* ← مهم: از چسبیدن به متن جلوگیری می‌کنه */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        width: fit-content;
+        align-self: flex-start;
       }
-
+      
       .cta-button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 20px 40px rgba(124, 58, 237, 0.45);
+        background: linear-gradient(90deg, #333333, #555555); /* هاور روشن‌تر */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       }
 
       .image-wrapper {
@@ -163,21 +164,25 @@
       }
 
       .cta-button {
-        padding: 0.8rem 2rem;
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
         font-size: 1.1rem;
         font-weight: 600;
         color: white;
-        background: linear-gradient(90deg, #7c3aed, #3b82f6);
+        background: linear-gradient(90deg, #111111, #333333, #444444); /* گرادیانت مشکی-خاکستری */
         border: none;
         border-radius: 999px;
         text-decoration: none;
         transition: all 0.3s ease;
-        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        width: fit-content;
+        align-self: flex-start;
       }
-
+      
       .cta-button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 15px 35px rgba(124, 58, 237, 0.5);
+        background: linear-gradient(90deg, #333333, #555555); /* هاور روشن‌تر */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       }
     }
   </style>
