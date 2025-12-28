@@ -13,7 +13,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     html, body {
       height: 100%;
       overflow: hidden;
@@ -27,6 +27,20 @@
       background-size: cover;
     }
 
+    
+    .overlay {
+      position: fixed;          /* یا absolute اگر container relative باشه */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);     /* تیرگی ملایم — می‌تونی 0.3 تا 0.6 تنظیم کنی */
+      backdrop-filter: blur(12px);        /* ← میزان تار بودن بک‌گراند — 8 تا 18 عالیه */
+      pointer-events: none;               /* مهم: تا کلیک روی محتوا مشکلی نداشته باشه */
+      z-index: 1;
+    }
+
+    
     .container {
       height: 100%;
       width: 100%;
@@ -190,6 +204,7 @@
   </style>
 </head>
 <body>
+  <div class="overlay"></div>
   </div>
   <div class="container">
     <div class="content">
