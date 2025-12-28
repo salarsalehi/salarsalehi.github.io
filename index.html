@@ -4,16 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>سالار صالحی | صفحه اصلی</title>
-  
+ 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+   
     html, body {
       height: 100%;
       overflow: hidden;
@@ -22,13 +21,36 @@
       color: #e5e5e5;
     }
 
+    /* بک‌گراند اصلی */
     body {
       background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      filter: blur(12px);
     }
-    
+
+    /* لایه بلور فقط برای بک‌گراند */
+    .bg-blur-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: inherit; /* همان بک‌گراند body رو می‌گیره */
+      background-attachment: fixed;
+      background-size: cover;
+      filter: blur(12px); /* ← میزان تار بودن — 8 تا 16 عالیه */
+      z-index: -1; /* پشت همه محتوا */
+      pointer-events: none;
+    }
+
+    /* لایه تیرگی ملایم روی بلور (اختیاری — برای خوانایی بهتر) */
+    .bg-dark-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.45); /* تیرگی متوسط */
+      z-index: -1;
+      pointer-events: none;
+    }
+
     .container {
+      position: relative; /* بالای لایه‌های بلور و تیره */
+      z-index: 1;
       height: 100%;
       width: 100%;
       display: flex;
@@ -48,19 +70,16 @@
         width: 100%;
         padding: 0 4rem;
       }
-
       .text-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
-
       .text-section h2 {
         font-size: 3.2rem;
         font-weight: 800;
         margin-bottom: 1.5rem;
       }
-
       .text-section p {
         font-size: 1.4rem;
         color: #b0b0c0;
@@ -69,14 +88,13 @@
         text-align: justify;
         text-justify: inter-word;
       }
-
       .cta-button {
         display: inline-block;
         padding: 0.8rem 1.8rem;
         font-size: 1.1rem;
         font-weight: 600;
         color: white;
-        background: linear-gradient(90deg, #333333, #444444); /* گرادیانت مشکی-خاکستری */
+        background: linear-gradient(90deg, #333333, #444444);
         border: none;
         border-radius: 999px;
         text-decoration: none;
@@ -85,13 +103,11 @@
         width: fit-content;
         align-self: flex-start;
       }
-      
       .cta-button:hover {
         transform: translateY(-3px);
-        background: linear-gradient(90deg, #444444, #555555); /* هاور روشن‌تر */
+        background: linear-gradient(90deg, #444444, #555555);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       }
-
       .image-wrapper {
         position: relative;
         border-radius: 1.5rem;
@@ -100,15 +116,13 @@
         aspect-ratio: 1 / 1;
         max-width: 600px;
       }
-
       .image-wrapper img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         filter: grayscale(100%) brightness(0.7);
-        transition: filter 0.6s ease, transform 0.8s ease;
+        transition: transform 0.8s ease;
       }
-
       .image-wrapper:hover img {
         transform: scale(1.06);
       }
@@ -119,7 +133,6 @@
       .container {
         padding: 2rem 1.5rem;
       }
-
       .content {
         display: flex;
         flex-direction: column;
@@ -127,13 +140,11 @@
         justify-content: center;
         height: 100%;
       }
-
       .profile-wrapper {
         width: 100%;
         max-width: 400px;
         text-align: center;
       }
-
       .profile-image {
         width: 180px;
         height: 180px;
@@ -142,22 +153,15 @@
         border: 4px solid rgba(100,100,255,0.3);
         margin-bottom: 2rem;
         filter: grayscale(100%) brightness(0.7);
-        transition: filter 0.5s ease;
       }
-
-      .profile-wrapper:hover .profile-image {
-      }
-
       .text-section {
         text-align: center;
         margin-bottom: 3rem;
       }
-
       .text-section h2 {
         font-size: 2.4rem;
         margin-bottom: 1.2rem;
       }
-
       .text-section p {
         font-size: 1.2rem;
         color: #b0b0c0;
@@ -165,66 +169,60 @@
         text-align: justify;
         text-justify: inter-word;
       }
-
       .cta-button {
         display: inline-block;
         padding: 0.8rem 1.8rem;
         font-size: 1.1rem;
         font-weight: 600;
         color: white;
-        background: linear-gradient(90deg, #333333, #444444); /* گرادیانت مشکی-خاکستری */
+        background: linear-gradient(90deg, #333333, #444444);
         border: none;
         border-radius: 999px;
         text-decoration: none;
         transition: all 0.3s ease;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         width: fit-content;
-        align-self: flex-start;
       }
-      
       .cta-button:hover {
         transform: translateY(-3px);
-        background: linear-gradient(90deg, #333333, #555555); /* هاور روشن‌تر */
+        background: linear-gradient(90deg, #444444, #555555);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       }
     }
   </style>
 </head>
 <body>
-  </div>
+  <!-- لایه بلور بک‌گراند -->
+  <div class="bg-blur-overlay"></div>
+  
+  <!-- لایه تیرگی روی بلور (اختیاری — برای خوانایی بیشتر متن) -->
+  <div class="bg-dark-overlay"></div>
+
   <div class="container">
     <div class="content">
-
       <!-- دسکتاپ: چیدمان دو ستونه -->
       <div class="text-section">
         <h2>من سالار صالحی</h2>
         <p>
-یک شهروند ایرانی علاقمند به توسعه ایران هستم که اقتصاد، سرمایه‌گذاری و توسعه‌ی کسب‌وکار تخصص حرفه‌ای من است، اما سال‌هاست که علاقمند جدی هنر، سیاست و موضوعات اجتماعی نیز هستم. اینجا فضایی است برای جمع‌آوری دیدگاه‌ها و نظراتم و محیطی است برای دعوت به عقلانیت.
+          یک شهروند ایرانی علاقمند به توسعه ایران هستم که اقتصاد، سرمایه‌گذاری و توسعه‌ی کسب‌وکار تخصص حرفه‌ای من است، اما سال‌هاست که علاقمند جدی هنر، سیاست و موضوعات اجتماعی نیز هستم. اینجا فضایی است برای جمع‌آوری دیدگاه‌ها و نظراتم و محیطی است برای دعوت به عقلانیت.
         </p>
-
         <a href="about.html" class="cta-button">درباره من</a>
       </div>
-
       <div class="image-wrapper">
-        <img src="profile.png" 
-             alt="سالار صالحی">
+        <img src="profile.png" alt="سالار صالحی">
       </div>
 
       <!-- موبایل: چیدمان عمودی با عکس دایره‌ای -->
       <div class="profile-wrapper">
-        <img src="profile.png" 
-             class="profile-image" alt="سالار صالحی">
-        
+        <img src="profile.png" class="profile-image" alt="سالار صالحی">
         <div class="text-section">
           <h2>من سالار صالحی</h2>
           <p>
-یک شهروند ایرانی علاقمند به توسعه ایران هستم که اقتصاد، سرمایه‌گذاری و توسعه‌ی کسب‌وکار تخصص حرفه‌ای من است، اما سال‌هاست که علاقمند جدی هنر، سیاست و موضوعات اجتماعی نیز هستم. اینجا فضایی است برای جمع‌آوری دیدگاه‌ها و نظراتم و محیطی است برای دعوت به عقلانیت.
+            یک شهروند ایرانی علاقمند به توسعه ایران هستم که اقتصاد، سرمایه‌گذاری و توسعه‌ی کسب‌وکار تخصص حرفه‌ای من است، اما سال‌هاست که علاقمند جدی هنر، سیاست و موضوعات اجتماعی نیز هستم. اینجا فضایی است برای جمع‌آوری دیدگاه‌ها و نظراتم و محیطی است برای دعوت به عقلانیت.
           </p>
         </div>
-
         <a href="about.html" class="cta-button">درباره من</a>
       </div>
-
     </div>
   </div>
 
@@ -242,7 +240,6 @@
         justify-content: center;
       }
     }
-
     @media (min-width: 1025px) {
       .profile-wrapper {
         display: none;
