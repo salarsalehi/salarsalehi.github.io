@@ -46,6 +46,20 @@
       align-items: center;
       padding: 2rem;
     }
+
+    /* کلاس لبه‌های محو مربعی + حفظ افکت هاور قبلی */
+    .profile-fade-square {
+      -webkit-mask-image: 
+        linear-gradient(to bottom, transparent 5%, black 20%, black 80%, transparent 95%),
+        linear-gradient(to right, transparent 5%, black 20%, black 80%, transparent 95%);
+      mask-image: 
+        linear-gradient(to bottom, transparent 5%, black 20%, black 80%, transparent 95%),
+        linear-gradient(to right, transparent 5%, black 20%, black 80%, transparent 95%);
+      -webkit-mask-composite: source-in;
+      mask-composite: intersect;
+      transition: all 0.5s ease;
+    }
+
     @media (min-width: 1025px) {
       .content {
         display: grid;
@@ -106,9 +120,10 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: grayscale(100%) brightness(0.7);
-        transition: transform 0.8s ease;
+        filter: grayscale(100%) brightness(0.9);
+        transition: transform 0.8s ease, filter 0.8s ease;
       }
+      /* هاور قبلی برگشت + با mask ترکیب شد */
       .image-wrapper:hover img {
         transform: scale(1.06);
         filter: grayscale(100%) brightness(0.9) blur(3px);
@@ -142,7 +157,7 @@
         object-fit: cover;
         margin-bottom: 1.4rem;
         margin-top: 0.5rem;
-        filter: grayscale(100%) brightness(0.7);
+        filter: grayscale(100%) brightness(0.9);
       }
       .text-section {
         text-align: center;
@@ -199,10 +214,10 @@
         <a href="about.html" class="cta-button">درباره من</a>
       </div>
       <div class="image-wrapper">
-        <img src="profile.png" alt="سالار صالحی">
+        <img src="profile.png" alt="سالار صالحی" class="profile-fade-square">
       </div>
       <div class="profile-wrapper">
-        <img src="profile.png" class="profile-image" alt="سالار صالحی">
+        <img src="profile.png" class="profile-image profile-fade-square" alt="سالار صالحی">
         <div class="text-section">
           <h2>سالار صالحی</h2>
           <p>
