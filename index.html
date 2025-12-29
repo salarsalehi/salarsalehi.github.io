@@ -47,7 +47,6 @@
       padding: 2rem;
     }
 
-    /* کلاس محو لبه فقط برای دسکتاپ */
     @media (min-width: 1025px) {
       .profile-fade-desktop {
         -webkit-mask-image:
@@ -142,9 +141,10 @@
         width: 320px;
         height: 320px;
         object-fit: cover;
-        margin-bottom: 1.4rem;
+        margin-bottom: 1.2rem;
         margin-top: 0.5rem;
-        filter: grayscale(100%) brightness(0.9); /* حالت نرمال موبایل */
+        border-radius: 1%;
+        filter: grayscale(100%) brightness(0.9);
       }
       .text-section {
         text-align: center;
