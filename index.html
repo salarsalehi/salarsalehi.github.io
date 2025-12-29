@@ -13,7 +13,7 @@
       padding: 0;
       box-sizing: border-box;
     }
- 
+  
     html, body {
       height: 100%;
       overflow: hidden;
@@ -25,14 +25,14 @@
       top: 0; left: 0; right: 0; bottom: 0;
       background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      filter: blur(12px);
+      filter: blur(8px);
       transform: scale(1.1);
       z-index: -2;
     }
     .dark-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
     .container {
@@ -47,19 +47,22 @@
       padding: 2rem;
     }
 
-    @media (min-width: 1025px) {
-      .profile-fade-desktop {
-        -webkit-mask-image:
-          linear-gradient(to bottom, transparent 10%, black 40%, black 60%, transparent 90%),
-          linear-gradient(to right, transparent 10%, black 40%, black 60%, transparent 90%);
-        mask-image:
-          linear-gradient(to bottom, transparent 10%, black 40%, black 60%, transparent 90%),
-          linear-gradient(to right, transparent 10%, black 40%, black 60%, transparent 90%);
-        -webkit-mask-composite: source-in;
-        mask-composite: intersect;
-        transition: all 0.5s ease;
-        filter: grayscale(100%) brightness(0.8);
-      }
+    /* کلاس لبه‌های محو مربعی */
+    .profile-fade-square {
+      -webkit-mask-image: 
+        linear-gradient(to bottom, transparent 5%, black 20%, black 80%, transparent 95%),
+        linear-gradient(to right, transparent 5%, black 20%, black 80%, transparent 95%);
+      mask-image: 
+        linear-gradient(to bottom, transparent 5%, black 20%, black 80%, transparent 95%),
+        linear-gradient(to right, transparent 5%, black 20%, black 80%, transparent 95%);
+      -webkit-mask-composite: source-in;
+      mask-composite: intersect;
+      transition: all 0.5s ease;
+      filter: grayscale(100%) brightness(0.9);
+    }
+    .profile-fade-square:hover {
+      transform: scale(1.06);
+      filter: grayscale(100%) brightness(0.9) blur(3px);
     }
 
     @media (min-width: 1025px) {
@@ -110,6 +113,7 @@
         background: linear-gradient(90deg, #555555, #555555);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       }
+      /* فریم حذف شد — عکس مستقیم با aspect-ratio */
       .profile-desktop {
         aspect-ratio: 1 / 1;
         max-width: 600px;
@@ -141,10 +145,8 @@
         width: 320px;
         height: 320px;
         object-fit: cover;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1.4rem;
         margin-top: 0.5rem;
-        border-radius: 2%;
-        filter: grayscale(100%) brightness(0.9);
       }
       .text-section {
         text-align: center;
@@ -200,13 +202,13 @@
         </p>
         <a href="about.html" class="cta-button">درباره من</a>
       </div>
-      <!-- دسکتاپ: عکس با لبه محو -->
+      <!-- دسکتاپ: بدون فریم، فقط عکس با محو لبه -->
       <div class="profile-desktop">
-        <img src="profile.png" alt="سالار صالحی" class="profile-fade-desktop">
+        <img src="profile.png" alt="سالار صالحی" class="profile-fade-square">
       </div>
-      <!-- موبایل: عکس نرمال (بدون محو لبه) -->
+      <!-- موبایل: عکس با محو لبه -->
       <div class="profile-wrapper">
-        <img src="profile.png" class="profile-image" alt="سالار صالحی">
+        <img src="profile.png" class="profile-image profile-fade-square" alt="سالار صالحی">
         <div class="text-section">
           <h2>سالار صالحی</h2>
           <p>
