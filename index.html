@@ -47,7 +47,6 @@
       padding: 2rem;
     }
 
-    /* کلاس لبه‌های محو مربعی */
     .profile-fade-square {
       -webkit-mask-image: 
         linear-gradient(to bottom, transparent 5%, black 20%, black 80%, transparent 95%),
@@ -58,11 +57,7 @@
       -webkit-mask-composite: source-in;
       mask-composite: intersect;
       transition: all 0.5s ease;
-      filter: grayscale(100%) brightness(0.6);
-    }
-    .profile-fade-square:hover {
-      transform: scale(1.06);
-      filter: grayscale(100%) brightness(0.9) blur(3px);
+      filter: grayscale(100%) brightness(0.5);
     }
 
     @media (min-width: 1025px) {
@@ -113,7 +108,7 @@
         background: linear-gradient(90deg, #555555, #555555);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       }
-      /* فریم حذف شد — عکس مستقیم با aspect-ratio */
+
       .profile-desktop {
         aspect-ratio: 1 / 1;
         max-width: 600px;
