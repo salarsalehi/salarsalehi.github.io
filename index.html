@@ -13,7 +13,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-  
+ 
     html, body {
       height: 100%;
       overflow: hidden;
@@ -47,17 +47,20 @@
       padding: 2rem;
     }
 
-    .profile-fade-square {
-      -webkit-mask-image: 
-        linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%),
-        linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
-      mask-image: 
-        linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%),
-        linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
-      -webkit-mask-composite: source-in;
-      mask-composite: intersect;
-      transition: all 0.5s ease;
-      filter: grayscale(100%) brightness(0.5);
+    /* کلاس محو لبه فقط برای دسکتاپ */
+    @media (min-width: 1025px) {
+      .profile-fade-desktop {
+        -webkit-mask-image:
+          linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%),
+          linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+        mask-image:
+          linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%),
+          linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
+        transition: all 0.5s ease;
+        filter: grayscale(100%) brightness(0.5);
+      }
     }
 
     @media (min-width: 1025px) {
@@ -108,7 +111,6 @@
         background: linear-gradient(90deg, #555555, #555555);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       }
-
       .profile-desktop {
         aspect-ratio: 1 / 1;
         max-width: 600px;
@@ -142,6 +144,7 @@
         object-fit: cover;
         margin-bottom: 1.4rem;
         margin-top: 0.5rem;
+        filter: grayscale(100%) brightness(0.9); /* حالت نرمال موبایل */
       }
       .text-section {
         text-align: center;
@@ -197,13 +200,13 @@
         </p>
         <a href="about.html" class="cta-button">درباره من</a>
       </div>
-      <!-- دسکتاپ: بدون فریم، فقط عکس با محو لبه -->
+      <!-- دسکتاپ: عکس با لبه محو -->
       <div class="profile-desktop">
-        <img src="profile.png" alt="سالار صالحی" class="profile-fade-square">
+        <img src="profile.png" alt="سالار صالحی" class="profile-fade-desktop">
       </div>
-      <!-- موبایل: عکس با محو لبه -->
+      <!-- موبایل: عکس نرمال (بدون محو لبه) -->
       <div class="profile-wrapper">
-        <img src="profile.png" class="profile-image profile-fade-square" alt="سالار صالحی">
+        <img src="profile.png" class="profile-image" alt="سالار صالحی">
         <div class="text-section">
           <h2>سالار صالحی</h2>
           <p>
