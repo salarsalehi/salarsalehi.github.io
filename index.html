@@ -5,21 +5,27 @@
   <link rel="apple-touch-icon" href="favicon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>سالار صالحی | صفحه اصلی</title>
+  <title>سالار صالحی</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
- 
-    html, body {
-      height: 100%;
-      overflow: hidden;
+
+    html {
+      scroll-behavior: smooth; /* اسکرول نرم */
+    }
+
+    body {
       font-family: 'Vazirmatn', system-ui, sans-serif;
       color: #e5e5e5;
+      background: #0a0a0c;
+      min-height: 100vh;
     }
+
     .blurred-bg {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -29,17 +35,19 @@
       transform: scale(1.1);
       z-index: -2;
     }
+
     .dark-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
-    .container {
+
+    /* بخش Hero (بالای صفحه) */
+    .hero-section {
       position: relative;
       z-index: 1;
-      height: 100%;
-      width: 100%;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -47,196 +55,188 @@
       padding: 2rem;
     }
 
+    .hero-content {
+      max-width: 1400px;
+      width: 100%;
+    }
+
     @media (min-width: 1025px) {
-      .content {
+      .hero-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 6rem;
-        max-width: 1400px;
-        width: 100%;
         padding: 0 4rem;
       }
-      .text-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .text-section h2 {
-        font-size: 2.8rem;
-        color: white;
-        font-weight: 800;
-        margin-bottom: 0.4rem;
-      }
-      .text-section p {
-        font-size: 1.4rem;
-        color: white;
-        max-width: 90%;
-        margin-bottom: 2.5rem;
-        text-align: justify;
-        text-justify: inter-word;
-      }
-      .cta-button {
-        display: inline-block;
-        padding: 0.8rem 1.8rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: white;
-        background: linear-gradient(90deg, #444444, #444444);
-        border: none;
-        border-radius: 999px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        width: fit-content;
-        align-self: flex-start;
-      }
-      .cta-button:hover {
-        transform: translateY(-3px);
-        background: linear-gradient(90deg, #555555, #555555);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-      }
-
-      .image-wrapper {
-        position: relative;
-        border-radius: 1.5rem;
-        overflow: hidden;
-        box-shadow: 0 40px 80px -20px rgba(0,0,0,0.7);
-        aspect-ratio: 1 / 1;
-        max-width: 600px;
-      }
-      .image-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: grayscale(100%) brightness(0.8);
-        transition: transform 0.8s ease, filter 0.8s ease;
-      }
-      .image-wrapper:hover img {
-        transform: scale(1.04);
-        filter: grayscale(100%) brightness(0.9) blur(2px);
-      }
     }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      color: white;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-text p {
+      font-size: 1.4rem;
+      color: white;
+      max-width: 90%;
+      margin-bottom: 2rem;
+      text-align: justify;
+    }
+
+    .image-wrapper {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 40px 80px -20px rgba(0,0,0,0.7);
+      aspect-ratio: 1 / 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) brightness(0.8);
+      transition: transform 0.8s ease, filter 0.8s ease;
+    }
+
+    .image-wrapper:hover img {
+      transform: scale(1.04);
+      filter: grayscale(100%) brightness(0.9) blur(2px);
+    }
+
+    /* بخش درباره من */
+    .about-section {
+      position: relative;
+      z-index: 1;
+      padding: 8rem 2rem 6rem;
+      background: rgba(10, 10, 12, 0.7);
+    }
+
+    .about-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-container h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .about-container p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      text-align: justify;
+      color: white;
+      line-height: 1.9;
+    }
+
     @media (max-width: 1024px) {
-        html, body {
-          height: auto;
-          overflow-y: auto;
-          overflow-x: hidden;
-        }
-      .container {
-        padding: 2.5rem 2.5rem;
-      }
-      .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-      }
-      .profile-wrapper {
-        width: 100%;
-        max-width: 320px;
+      .hero-content {
         text-align: center;
       }
-      .profile-image {
+      .hero-text h2 {
+        font-size: 2.2rem;
+      }
+      .hero-text p {
+        font-size: 1.1rem;
+      }
+      .image-wrapper {
         width: 320px;
         height: 320px;
-        border-radius: 2%;
-        object-fit: cover;
-        margin-bottom: 1.4rem;
-        margin-top: 0.5rem;
-        filter: grayscale(100%) brightness(0.9);
+        margin-bottom: 2rem;
       }
-      .text-section {
-        text-align: center;
-        margin-bottom: 0.5rem;
+      .about-container h1 {
+        font-size: 2.2rem;
       }
-      .text-section h2 {
-        font-size: 1.5rem;
-        color: white;
-        text-align: right;
-        margin-bottom: 0.1rem;
-      }
-      .text-section p {
-        font-size: 1rem;
-        color: white;
-        line-height: 1.5rem;
-        text-align: justify;
-        text-justify: inter-word;
-        margin-bottom: 0.1rem;
-      }
-      .cta-button {
-        display: inline-block;
-        padding: 0.8rem 1.8rem;
+      .about-container p {
         font-size: 1.1rem;
-        font-weight: 600;
-        color: white;
-        background: linear-gradient(90deg, #444444, #444444);
-        border: none;
-        border-radius: 999px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        width: fit-content;
       }
-      .cta-button:hover {
-        transform: translateY(-3px);
-        background: linear-gradient(90deg, #555555, #555555);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-      }
+    }
+
+    /* دکمه بازگشت به بالا */
+    .back-to-top {
+      display: block;
+      width: fit-content;
+      margin: 4rem auto 2rem;
+      padding: 0.9rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(90deg, #444444, #555555);
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      background: linear-gradient(90deg, #555555, #666666);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     }
   </style>
 </head>
 <body>
   <div class="blurred-bg"></div>
   <div class="dark-overlay"></div>
-  <div class="container">
-    <div class="content">
-      <div class="text-section">
+
+  <!-- بخش Hero -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
         <h2>سالار صالحی</h2>
         <p>
-        هستم، دانشجوی اقتصاد، با عشقی عمیق به ایران و آرزوی ساختن آینده‌ای روشن‌تر برای این سرزمین.
-از کودکی در دنیای موسیقی زندگی کرده‌ام؛ سازها و نت‌ها به من آموختند که هماهنگی و تعادل، کلید موفقیت و پیشرفت است؛ درسی که در اقتصاد نیز همراه من است.
-دغدغه‌ام مسائل اقتصادی و اجتماعی ایران و یافتن راه‌حل‌های خلاقانه برای چالش‌های پیش رو است و هدفم کمک به توسعه پایدار کشور.
+          هستم، دانشجوی اقتصاد، با عشقی عمیق به ایران و آرزوی ساختن آینده‌ای روشن‌تر برای این سرزمین.<br>
+          از کودکی در دنیای موسیقی زندگی کرده‌ام؛ سازها و نت‌ها به من آموختند که هماهنگی و تعادل، کلید موفقیت و پیشرفت است؛ درسی که در اقتصاد نیز همراه من است.<br>
+          دغدغه‌ام مسائل اقتصادی و اجتماعی ایران و یافتن راه‌حل‌های خلاقانه برای چالش‌های پیش رو است و هدفم کمک به توسعه پایدار کشور.
         </p>
-        <a href="about.html" class="cta-button">درباره من</a>
       </div>
-
       <div class="image-wrapper">
         <img src="profile.png" alt="سالار صالحی">
       </div>
-
-      <div class="profile-wrapper">
-        <img src="profile.png" class="profile-image" alt="سالار صالحی">
-        <div class="text-section">
-          <h2>سالار صالحی</h2>
-          <p>
-            هستم، دانشجوی اقتصاد، با عشقی عمیق به ایران و آرزوی ساختن آینده‌ای روشن‌تر برای این سرزمین.
-از کودکی در دنیای موسیقی زندگی کرده‌ام؛ سازها و نت‌ها به من آموختند که هماهنگی و تعادل، کلید موفقیت و پیشرفت است؛ درسی که در اقتصاد نیز همراه من است.
-دغدغه‌ام مسائل اقتصادی و اجتماعی ایران و یافتن راه‌حل‌های خلاقانه برای چالش‌های پیش رو است و هدفم کمک به توسعه پایدار کشور.
-          </p>
-        </div>
-        <a href="about.html" class="cta-button">درباره من</a>
-      </div>
     </div>
-  </div>
-  <style>
-    @media (max-width: 1024px) {
-      .content > .text-section,
-      .content > .image-wrapper {
-        display: none;
-      }
-      .profile-wrapper {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-    @media (min-width: 1025px) {
-      .profile-wrapper {
-        display: none;
-      }
-    }
-  </style>
+  </section>
+
+  <!-- بخش درباره من -->
+  <section class="about-section">
+    <div class="about-container">
+      <h1>درباره من</h1>
+
+      <p>
+        من سالار صالحی هستم، دانشجوی اقتصاد با قلبی پر از عشق به ایران و آرزوی ساختن آینده‌ای روشن‌تر برای این سرزمین.
+      </p>
+
+      <p>
+        داستان من از زمانی آغاز شد که نت‌های موسیقی در دستانم جان می‌گرفتند و سازها، همراهان همیشگی‌ام بودند. سال‌ها نواختن و غرق شدن در دنیای ملودی‌ها، به من آموخت که هماهنگی و تعادل، کلید موفقیت و پیشرفت است؛ درسی عمیق که بعدها در اقتصاد، بیش از پیش برایم معنادار شد. موسیقی نه تنها یک سرگرمی، بلکه بخشی از شخصیت من بود که به من صبر، دقت و خلاقیت آموخت؛ مهارت‌هایی که امروز در تحلیل مسائل پیچیده اقتصادی به کار می‌بندم.
+      </p>
+
+      <p>
+        در سال ۱۴۰۲، مسیر زندگی‌ام به سوی اقتصاد چرخید و از همان روزهای نخست، شیفته این رشته شدم. اقتصاد برای من فقط مجموعه‌ای از نمودارها و نظریه‌ها نیست؛ بلکه دریچه‌ای است به درک عمیق‌تر جامعه، تصمیم‌گیری‌ها و آینده یک ملت. امروز اقتصاد نه تنها رشته تحصیلی‌ام، بلکه بخشی جدایی‌ناپذیر از هویت و دیدگاهم به جهان است.
+      </p>
+
+      <p>
+        به عنوان جوانی که در دل ایران زندگی می‌کند، دغدغه‌های اقتصادی و اجتماعی بسیاری دارم: از چالش‌های تورم، بیکاری و نابرابری تا فرصت‌های عظیمی که در استعدادهای انسانی، منابع طبیعی و موقعیت استراتژیک این کشور نهفته است. من باور دارم که ایران ظرفیت تبدیل شدن به یک قدرت اقتصادی پایدار و مرفه را دارد، اما این نیازمند تفکر خلاق، سیاست‌گذاری هوشمند و تلاش جمعی است. هدف اصلی‌ام توسعه پایدار ایران و بهبود وضعیت اقتصادی هموطنانم است. به همین دلیل، قصدی برای مهاجرت ندارم؛ عمیقاً معتقدم که تغییر واقعی و ماندگار، از درون همین خاک و با دستان همین مردم آغاز می‌شود و من می‌خواهم بخشی فعال از این تحول بزرگ باشم.
+      </p>
+
+      <p>
+        در این فضا، دیدگاه‌ها، تحلیل‌ها و ایده‌هایم را در مورد مسائل اقتصادی و اجتماعی ایران به اشتراک می‌گذارم. امیدوارم این فضا به گفت‌وگوهای سازنده، تبادل نظر و یافتن راه‌حل‌های عملی منجر شود. موسیقی همچنان همراه همیشگی‌ام است؛ گاهی یک ملودی آرام به من کمک می‌کند تا پیچیده‌ترین مدل‌های اقتصادی را با دیدی تازه‌تر و ساده‌تر ببینم و گاهی نیز الهام‌بخش ایده‌های نو در مسیر توسعه می‌شود.
+      </p>
+
+      <p>
+        خوشحالم که اینجا هستید و همراهم شدید. بیایید با هم فکر کنیم، بحث کنیم و برای ساختن ایرانی بهتر، گام‌های واقعی برداریم. آینده از آن ماست، اگر باور کنیم و عمل کنیم.
+      </p>
+
+      <!-- دکمه بازگشت به بالا -->
+      <a href="#" class="back-to-top">بازگشت به بالا ↑</a>
+    </div>
+  </section>
 </body>
 </html>
