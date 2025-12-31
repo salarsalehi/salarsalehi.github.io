@@ -151,7 +151,7 @@
       transform: translateX(-50%);
       background: linear-gradient(90deg, #333333, #444444);
     }
-    /* موبایل */
+    
     @media (max-width: 1024px) {
       .hero-content {
         grid-template-columns: 1fr;
@@ -163,12 +163,12 @@
       }
       .hero-text p {
         font-size: 1.2rem;
-        max-width: 100%;
+        max-width: 330px;
       }
       .profile-image-large {
-        max-width: 350px;
+        max-width: 330px;
         margin: 0 auto;
-        order: -1; /* عکس بالای متن بیاد */
+        order: -1;
       }
       .about {
         padding: 1rem 1rem 8rem;
@@ -176,6 +176,7 @@
       .about-card {
         padding: 3rem 2rem;
         border-radius: 1.5rem;
+        max-width: 320px;
       }
       .about-card h1 {
         font-size: 2.4rem;
