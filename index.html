@@ -8,24 +8,20 @@
   <title>سالار صالحی</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Vazirmatn', system-ui, sans-serif;
       color: #e5e5e5;
       background: #0a0a0c;
       overflow-x: hidden;
     }
-
     .blurred-bg {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -35,25 +31,22 @@
       transform: scale(1.1);
       z-index: -2;
     }
-
     .dark-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.55);
       z-index: -1;
     }
-
     .fade-in {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 1s ease, transform 1s ease;
     }
-
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
+    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -63,7 +56,6 @@
       position: relative;
       z-index: 1;
     }
-
     .hero-content {
       max-width: 1400px;
       width: 100%;
@@ -72,14 +64,12 @@
       gap: 6rem;
       align-items: center;
     }
-
     .hero-text h2 {
       font-size: 3.5rem;
       font-weight: 900;
       margin-bottom: 0.5rem;
       color: white;
     }
-
     .hero-text p {
       font-size: 1.4rem;
       line-height: 2;
@@ -89,14 +79,12 @@
       text-justify: inter-word;
       hyphens: auto;
     }
-
     .profile-image-large {
       border-radius: 1.5rem;
       overflow: hidden;
       box-shadow: 0 40px 80px -20px rgba(0,0,0,0.8);
       aspect-ratio: 1/1;
     }
-
     .profile-image-large img {
       width: 100%;
       height: 100%;
@@ -104,18 +92,16 @@
       filter: grayscale(100%) brightness(0.85);
       transition: all 0.8s ease;
     }
-
     .profile-image-large:hover img {
       transform: scale(1.05);
       filter: grayscale(80%) brightness(0.95);
     }
-
+    /* About Section - فاصله کمتر */
     .about {
-      padding: 3rem 1rem 8rem;
+      padding: 4rem 1rem 8rem; /* فاصله از بالا کمتر شد (دسکتاپ) */
       position: relative;
       z-index: 1;
     }
-
     .about-card {
       max-width: 900px;
       margin: 0 auto;
@@ -126,7 +112,6 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.5);
       border: 1px solid rgba(100, 100, 100, 0.3);
     }
-
     .about-card h1 {
       font-size: 3rem;
       font-weight: 850;
@@ -134,7 +119,6 @@
       margin-bottom: 3rem;
       color: white;
     }
-
     .about-card p {
       font-size: 1.25rem;
       line-height: 2;
@@ -159,50 +143,46 @@
       text-decoration: none;
       font-weight: 600;
     }
-
     .back-to-top.visible {
       opacity: 1;
       visibility: visible;
     }
-
     .back-to-top:hover {
       transform: translateX(-50%);
       background: linear-gradient(90deg, #333333, #444444);
     }
+    /* موبایل */
     @media (max-width: 1024px) {
       .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 3rem;
+        gap: 2.5rem;
       }
-
       .hero-text h2 {
         font-size: 2.8rem;
       }
-
       .hero-text p {
         font-size: 1.2rem;
         max-width: 100%;
       }
-
       .profile-image-large {
         max-width: 350px;
         margin: 0 auto;
+        order: -1; /* عکس بالای متن بیاد */
       }
-
+      .about {
+        padding: 1rem 1rem 8rem; /* فاصله کمتر در موبایل */
+      }
       .about-card {
         padding: 3rem 2rem;
         border-radius: 1.5rem;
       }
-
       .about-card h1 {
         font-size: 2.4rem;
       }
-
       .about-card p {
         font-size: 1.15rem;
       }
-
       .back-to-top {
         bottom: 20px;
       }
@@ -212,7 +192,6 @@
 <body>
   <div class="blurred-bg"></div>
   <div class="dark-overlay"></div>
-
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content fade-in">
@@ -232,27 +211,21 @@
   <section class="about">
     <div class="about-card fade-in">
       <h1>درباره من</h1>
-
       <p>
         من سالار صالحی هستم، دانشجوی اقتصاد با قلبی پر از عشق به ایران و آرزوی ساختن آینده‌ای روشن‌تر برای این سرزمین.
       </p>
-
       <p>
         داستان من از زمانی آغاز شد که نت‌های موسیقی در دستانم جان می‌گرفتند و سازها، همراهان همیشگی‌ام بودند. سال‌ها نواختن و غرق شدن در دنیای ملودی‌ها، به من آموخت که هماهنگی و تعادل، کلید موفقیت و پیشرفت است؛ درسی عمیق که بعدها در اقتصاد، بیش از پیش برایم معنادار شد. موسیقی نه تنها یک سرگرمی، بلکه بخشی از شخصیت من بود که به من صبر، دقت و خلاقیت آموخت؛ مهارت‌هایی که امروز در تحلیل مسائل پیچیده اقتصادی به کار می‌بندم.
       </p>
-
       <p>
         در سال ۱۴۰۲، مسیر زندگی‌ام به سوی اقتصاد چرخید و از همان روزهای نخست، شیفته این رشته شدم. اقتصاد برای من فقط مجموعه‌ای از نمودارها و نظریه‌ها نیست؛ بلکه دریچه‌ای است به درک عمیق‌تر جامعه، تصمیم‌گیری‌ها و آینده یک ملت. امروز اقتصاد نه تنها رشته تحصیلی‌ام، بلکه بخشی جدایی‌ناپذیر از هویت و دیدگاهم به جهان است.
       </p>
-
       <p>
         به عنوان جوانی که در دل ایران زندگی می‌کند، دغدغه‌های اقتصادی و اجتماعی بسیاری دارم: از چالش‌های تورم، بیکاری و نابرابری تا فرصت‌های عظیمی که در استعدادهای انسانی، منابع طبیعی و موقعیت استراتژیک این کشور نهفته است. من باور دارم که ایران ظرفیت تبدیل شدن به یک قدرت اقتصادی پایدار و مرفه را دارد، اما این نیازمند تفکر خلاق، سیاست‌گذاری هوشمند و تلاش جمعی است. هدف اصلی‌ام توسعه پایدار ایران و بهبود وضعیت اقتصادی هموطنانم است. به همین دلیل، قصدی برای مهاجرت ندارم؛ عمیقاً معتقدم که تغییر واقعی و ماندگار، از درون همین خاک و با دستان همین مردم آغاز می‌شود و من می‌خواهم بخشی فعال از این تحول بزرگ باشم.
       </p>
-
       <p>
         در این فضا، دیدگاه‌ها، تحلیل‌ها و ایده‌هایم را در مورد مسائل اقتصادی و اجتماعی ایران به اشتراک می‌گذارم. امیدوارم این فضا به گفت‌وگوهای سازنده، تبادل نظر و یافتن راه‌حل‌های عملی منجر شود. موسیقی همچنان همراه همیشگی‌ام است؛ گاهی یک ملودی آرام به من کمک می‌کند تا پیچیده‌ترین مدل‌های اقتصادی را با دیدی تازه‌تر و ساده‌تر ببینم و گاهی نیز الهام‌بخش ایده‌های نو در مسیر توسعه می‌شود.
       </p>
-
       <p>
         خوشحالم که اینجا هستید و همراهم شدید. بیایید با هم فکر کنیم، بحث کنیم و برای ساختن ایرانی بهتر، گام‌های واقعی برداریم. آینده از آن ماست، اگر باور کنیم و عمل کنیم.
       </p>
@@ -261,7 +234,6 @@
   <a href="#" class="back-to-top" id="backToTop">
     بازگشت
   </a>
-
   <script>
     const fadeElems = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
@@ -272,7 +244,6 @@
       });
     }, { threshold: 0.1 });
     fadeElems.forEach(el => observer.observe(el));
-
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 500) {
