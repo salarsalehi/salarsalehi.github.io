@@ -61,13 +61,13 @@
       align-items: center;
     }
     .hero-text h2 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 900;
       margin-bottom: 0.2rem;
       color: white;
     }
     .hero-text p {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       line-height: 1.5;
       text-align: justify;
       text-justify: inter-word;
@@ -89,7 +89,6 @@
     .profile-image-large:hover img {
       filter: grayscale(100%) brightness(0.75) blur(4px);
     }
-
     .about-inner {
       background: #222222; 
       border-radius: 1.8rem;
@@ -111,7 +110,6 @@
       text-justify: inter-word;
       hyphens: auto;
     }
-
     .back-to-top {
       position: fixed;
       bottom: 50px;
@@ -150,18 +148,19 @@
         gap: 2rem;
       }
       .hero-text h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
       .hero-text p {
-        font-size: 1.15rem;
+        font-size: 1rem;
+        margin: 0 auto;
       }
       .profile-image-large {
-        max-width: 300px;
+        
         margin: 0 auto;
         order: -1;
       }
       .about-inner {
-        padding: 3rem 2rem;
+        padding: 1.5rem 1rem;
       }
       .about-inner h1 {
         font-size: 2rem;
@@ -179,10 +178,7 @@
 <body>
   <div class="blurred-bg"></div>
   <div class="dark-overlay"></div>
-
-  <!-- کارت اصلی خاکستری تیره -->
   <div class="main-card">
-    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
         <div class="hero-text">
@@ -198,8 +194,6 @@
         </div>
       </div>
     </section>
-
-    <!-- بخش درباره من - کارت روشن‌تر داخل کارت اصلی -->
     <div class="about-inner">
       <h1>درباره من</h1>
       <p>
@@ -222,8 +216,6 @@
       </p>
     </div>
   </div>
-
-  <!-- دکمه بازگشت به بالا -->
   <a href="#" class="back-to-top" id="backToTop">
     بازگشت
   </a>
