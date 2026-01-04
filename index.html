@@ -23,9 +23,8 @@
       overflow-x: hidden;
       min-height: 100vh;
       display: flex;
-      flex-direction: column; /* تغییر برای قرار دادن لوگو بالای کارت */
       align-items: center;
-      justify-content: flex-start; /* تغییر برای شروع از بالا */
+      justify-content: center;
       padding: 4rem 2rem;
     }
     .blurred-bg {
@@ -43,26 +42,6 @@
       background: rgba(0, 0, 0, 0.3);
       z-index: -1;
     }
-
-    /* بخش جدید: لوگو وسط بالای صفحه */
-    .site-header {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 0.1rem;
-    }
-
-    .site-logo {
-      height: 100px; /* اندازه لوگو — تغییر بده اگر لازم بود */
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
-      transition: transform 0.4s ease;
-    }
-
-    .site-logo:hover {
-      transform: scale(1.08);
-    }
-
     .main-card {
       max-width: 1000px;
       width: 100%;
@@ -207,21 +186,12 @@
       .back-to-top {
         bottom: 20px;
       }
-      .site-logo {
-        height: 70px; /* کوچیک‌تر در موبایل */
-      }
     }
   </style>
 </head>
 <body>
   <div class="blurred-bg"></div>
   <div class="dark-overlay"></div>
-
-  <!-- بخش جدید: لوگو وسط بالای صفحه -->
-  <header class="site-header">
-    <img src="logo.png" alt="logo" class="site-logo">
-  </header>
-
   <div class="main-card">
     <section class="hero">
       <div class="hero-content">
