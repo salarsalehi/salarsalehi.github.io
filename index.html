@@ -1,247 +1,67 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="favicon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>سالار صالحی - وبسایت شخصی</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Vazirmatn', system-ui, sans-serif;
-      color: #e5e5e5;
-      background: #0a0a0c;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
-    }
-    .blurred-bg {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      filter: blur(8px);
-      transform: scale(1.1);
-      z-index: -2;
-    }
-    .dark-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: -1;
-    }
-    .main-card {
-      max-width: 1000px;
-      width: 100%;
-      padding: 3rem 3rem;
-    }
-    .hero {
-      margin-bottom: 3rem;
-      background: transparent;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 1.8rem;
-      padding: 3rem 3rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    }
-    .hero-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    .hero-text h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 0.2rem;
-      color: white;
-    }
-    .hero-text p {
-      font-size: 1.25rem;
-      line-height: 1.5;
-      text-align: justify;
-      text-justify: inter-word;
-      hyphens: auto;
-    }
-    .profile-image-large {
-      border-radius: 1.5rem;
-      overflow: hidden;
-      aspect-ratio: 1/1;
-    }
-    .profile-image-large img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%) brightness(0.85);
-      transition: all 0.8s ease;
-    }
-    .profile-image-large:hover img {
-      filter: grayscale(100%) brightness(0.75) blur(4px);
-    }
-    .about-inner {
-      background: transparent;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 1.8rem;
-      padding: 3.5rem 3rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    }
-    .about-inner h1 {
-      font-size: 2rem;
-      font-weight: 850;
-      text-align: center;
-      margin-bottom: 2.5rem;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: white;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      backdrop-filter: blur(14px);
-    }
-    .about-inner p {
-      font-size: 1.25rem;
-      line-height: 2;
-      margin-bottom: 2rem;
-      text-align: justify;
-      text-justify: inter-word;
-      hyphens: auto;
-      line-height: 1.5;
-    }
-    .back-to-top {
-      position: fixed;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.4s ease;
-      padding: 1rem 1.8rem;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: white;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      backdrop-filter: blur(14px);
-    }
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-    @media (max-width: 1024px) {
-      body {
-        padding: 1rem;
-      }
-      .main-card {
-        padding: 2rem 1rem;
-      }
-      .hero {
-        margin-bottom: 2rem;
-        padding: 2rem 2rem;
-      }
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1.5rem;
-      }
-      .hero-text h2 {
-        font-size: 1.4rem;
-      }
-      .hero-text p {
-        font-size: 1rem;
-        margin: 0 auto;
-        line-height: 1.5;
-      }
-      .profile-image-large {
-        margin: 0 auto;
-        order: -1;
-      }
-      .about-inner {
-        padding: 2rem 2rem;
-      }
-      .about-inner h1 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-      }
-      .about-inner p {
-        font-size: 1rem;
-        line-height: 1.5;
-      }
-      .back-to-top {
-        bottom: 20px;
-      }
-    }
-  </style>
+  <title>یادداشت‌های اقتصادی</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="blurred-bg"></div>
-  <div class="dark-overlay"></div>
-  <div class="main-card">
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h2>سالار صالحی</h2>
-          <p>
-            هستم، دانشجوی اقتصاد، با عشقی عمیق به ایران و آرزوی ساختن آینده‌ای روشن‌تر برای این سرزمین.
-            از کودکی در دنیای موسیقی زندگی کرده‌ام؛ سازها و نت‌ها به من آموختند که هماهنگی و تعادل، کلید موفقیت و پیشرفت است؛ درسی که در اقتصاد نیز همراه من است.
-            دغدغه‌ام مسائل اقتصادی و اجتماعی ایران و یافتن راه‌حل‌های خلاقانه برای چالش‌های پیش رو است و هدفم کمک به توسعه پایدار کشور.
-          </p>
-        </div>
-        <div class="profile-image-large">
-          <img src="profile.jpeg" alt="سالار صالحی">
-        </div>
-      </div>
-    </section>
-    <div class="about-inner">
-      <h1>درباره من</h1>
-      <p>
-        من سالار صالحی هستم، دانشجوی اقتصاد با قلبی پر از عشق به ایران و آرزوی ساختن آینده‌ای روشن‌تر برای این سرزمین.
-      </p>
-      <p>
-        داستان من از زمانی آغاز شد که نت‌های موسیقی در دستانم جان می‌گرفتند و سازها، همراهان همیشگی‌ام بودند. سال‌ها نواختن و غرق شدن در دنیای ملودی‌ها، به من آموخت که هماهنگی و تعادل، کلید موفقیت و پیشرفت است؛ درسی عمیق که بعدها در اقتصاد، بیش از پیش برایم معنادار شد. موسیقی نه تنها یک سرگرمی، بلکه بخشی از شخصیت من بود که به من صبر، دقت و خلاقیت آموخت؛ مهارت‌هایی که امروز در تحلیل مسائل پیچیده اقتصادی به کار می‌بندم.
-      </p>
-      <p>
-        در سال ۱۴۰۲، مسیر زندگی‌ام به سوی اقتصاد چرخید و از همان روزهای نخست، شیفته این رشته شدم. اقتصاد برای من فقط مجموعه‌ای از نمودارها و نظریه‌ها نیست؛ بلکه دریچه‌ای است به درک عمیق‌تر جامعه، تصمیم‌گیری‌ها و آینده یک ملت. امروز اقتصاد نه تنها رشته تحصیلی‌ام، بلکه بخشی جدایی‌ناپذیر از هویت و دیدگاهم به جهان است.
-      </p>
-      <p>
-        به عنوان جوانی که در دل ایران زندگی می‌کند، دغدغه‌های اقتصادی و اجتماعی بسیاری دارم: از چالش‌های تورم، بیکاری و نابرابری تا فرصت‌های عظیمی که در استعدادهای انسانی، منابع طبیعی و موقعیت استراتژیک این کشور نهفته است. من باور دارم که ایران ظرفیت تبدیل شدن به یک قدرت اقتصادی پایدار و مرفه را دارد، اما این نیازمند تفکر خلاق، سیاست‌گذاری هوشمند و تلاش جمعی است. هدف اصلی‌ام توسعه پایدار ایران و بهبود وضعیت اقتصادی هموطنانم است. به همین دلیل، قصدی برای مهاجرت ندارم؛ عمیقاً معتقدم که تغییر واقعی و ماندگار، از درون همین خاک و با دستان همین مردم آغاز می‌شود و من می‌خواهم بخشی فعال از این تحول بزرگ باشم.
-      </p>
-      <p>
-        در این فضا، دیدگاه‌ها، تحلیل‌ها و ایده‌هایم را در مورد مسائل اقتصادی و اجتماعی ایران به اشتراک می‌گذارم. امیدوارم این فضا به گفت‌وگوهای سازنده، تبادل نظر و یافتن راه‌حل‌های عملی منجر شود. موسیقی همچنان همراه همیشگی‌ام است؛ گاهی یک ملودی آرام به من کمک می‌کند تا پیچیده‌ترین مدل‌های اقتصادی را با دیدی تازه‌تر و ساده‌تر ببینم و گاهی نیز الهام‌بخش ایده‌های نو در مسیر توسعه می‌شود.
-      </p>
-      <p>
-        خوشحالم که اینجا هستید و همراهم شدید. بیایید با هم فکر کنیم، بحث کنیم و برای ساختن ایرانی بهتر، گام‌های واقعی برداریم. آینده از آن ماست، اگر باور کنیم و عمل کنیم.
-      </p>
+
+<div class="layout">
+
+  <!-- سایدبار -->
+  <aside class="sidebar">
+    <h2>یادداشت‌های اقتصادی</h2>
+    <p class="desc">یادداشت‌های روزانه درباره اقتصاد و بازارها</p>
+
+    <nav>
+      <a href="#">خانه</a>
+      <a href="#">یادداشت‌ها</a>
+      <a href="#">درباره من</a>
+    </nav>
+
+    <div class="latest">
+      <h3>آخرین یادداشت‌ها</h3>
+      <ul>
+        <li>دلار در تقاطع سیاست و تورم</li>
+        <li>چرا بازارها پیشخور می‌کنند؟</li>
+        <li>تورم و انتظارات</li>
+      </ul>
     </div>
-  </div>
-  <a href="#" class="back-to-top" id="backToTop">
-    بازگشت
-  </a>
-  <script>
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-  </script>
+  </aside>
+
+  <!-- محتوا -->
+  <main class="content">
+    <p class="date">۳۰ اردیبهشت ۱۴۰۳</p>
+    <h1>دلار در تقاطع سیاست و تورم</h1>
+
+    <div class="highlight">
+      وقتی سیاست‌های پولی منسجم نباشد، بازار ارز اولین جایی است که واکنش نشان می‌دهد.
+    </div>
+
+    <p>
+      در هفته‌های اخیر، بازار ارز تحت تأثیر متغیرهای داخلی و خارجی قرار گرفته است.
+      افزایش انتظارات تورمی و ابهام در سیاست‌گذاری نقش مهمی داشته‌اند.
+    </p>
+
+    <h2>تحلیل</h2>
+    <ol>
+      <li>رشد نقدینگی بالاتر از تولید</li>
+      <li>عدم قطعیت در سیاست‌گذاری</li>
+      <li>انتظارات تورمی ناشی از کسری بودجه</li>
+    </ol>
+
+    <h2>جمع‌بندی</h2>
+    <ul>
+      <li>بازار ارز یک بازار انتظاری است</li>
+      <li>مدیریت انتظارات کلیدی است</li>
+      <li>ثبات سیاستی اهمیت دارد</li>
+    </ul>
+  </main>
+
+</div>
+
 </body>
 </html>
